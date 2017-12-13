@@ -1,3 +1,16 @@
+addons:
+  apt:
+    packages:
+      - python-pygments
+
+install:
+  - rm -rf public || exit 0
+  
+script:
+  - cd src
+  - ../binaries/hugo --theme=ghoust
+
+
 deploy
   provider: pages
   skip_cleanup: true
